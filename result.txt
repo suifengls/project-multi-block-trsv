@@ -1,0 +1,46 @@
+[khe@newton ~/trsv]:./runtest.sh 
+Total elements = 1000000, Non-zero elements = 111985
+Using sequential implementation
+Total Time: 0.001814
+Writing to file. 1000 1
+
+
+Total elements = 1000000, Non-zero elements = 111985
+Using CUBLAS implementation
+Total Time: 0.003043
+Kernel Time: 0.001745
+Transfer Time: 0.001298
+Writing to file. 1000 1
+
+
+Total elements = 1000000, Non-zero elements = 111985
+Using CSR CPU implementation
+Total Time: 0.000105
+Writing to file. 1000 1
+
+
+
+
+Total elements = 1000000, Non-zero elements = 111985
+Using CUSPARSE implementation
+N = 1000, nz = 19520
+Total Time: 0.001209
+Analysis Time: 0.001007
+Solving Time: 0.000065
+Writing to file. 1000 1
+
+
+Our trsv:
+ 
+[khe@newton ~/st_trsv]:./trsv
+Matrix L[1000][1000]:
+The total number of nonzero elements: 5829
+Execution time on Leveling CSC format 84.000000 usec
+Start on GPU...
+Execution time on GPU 183.000000 usec
+Start on CPU navie...
+Execution time on CPU : 2203.000000 usec
+Start on CPU CSR format...
+Execution time on CPU CSR format: 41.000000 usec
+Correct results between CPU and CPU_CSR! Norm error =  1.246093e-06
+Correct results between CPU and GPU! Norm error =  8.960829e-03
